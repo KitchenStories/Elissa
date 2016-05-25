@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Elissa_Example' do
+  pod 'Elissa', :path => '../'
+
+  target 'Elissa_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
