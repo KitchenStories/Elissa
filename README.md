@@ -22,7 +22,7 @@ pod "Elissa"
 
 ## Author
 
-Kersten Broich, kersten.broich@gmail.com
+Kersten Broich, kersten.broich@kitchenstories.de
 
 ## License
 
