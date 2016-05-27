@@ -68,11 +68,10 @@ public class Elissa: UIView {
 
     
     private init(view: UIView, imageName: String, message: String) {
-//        self.handler = handler
-        
         super.init(frame: CGRect.zero)
         
-        let views = NSBundle.mainBundle().loadNibNamed("Elissa", owner: self, options: nil)
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let views = bundle.loadNibNamed("Elissa", owner: self, options: nil)
         
         guard let embeddedContentView = views.first as? UIView else { return }
         addSubview(embeddedContentView)

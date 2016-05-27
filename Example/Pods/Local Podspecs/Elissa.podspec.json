@@ -18,5 +18,8 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Elissa/Classes/**/*"
+  "source_files": "Elissa/Classes/**/*",
+  "resources": [
+    "Elissa/Assets/*.xib"
+  ]
 }

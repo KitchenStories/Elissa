@@ -31,7 +31,8 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Elissa/Classes/**/*'
-  
+  s.resources = ["Elissa/Assets/*.xib"]
+
   # s.resource_bundles = {
   #   'Elissa' => ['Elissa/Assets/*.png']
   # }
