@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11BC0D088DFB73BA3D3E722B499F478A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		21CC0CB5A528A92BC0D764DF3150F801 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		34CD0A2B1CF8912700C6542E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */; };
+		3A36CB509DBD910B82AB402306DF45C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		4DCDB2469E1BFC27B0F11696CD6D667A /* Pods-Elissa_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C38D53C9819EF73C826B4EF2C547A0 /* Pods-Elissa_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		566C8193857645FE91F1990C02BE57CC /* Elissa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */; };
+		94A36FC4CB8D8B1E64EC37CE76C54509 /* Pods-Elissa_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C9D905C78305372478A8635D107516F /* Pods-Elissa_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2DE3DBF14EAA747449D06FB847326C1 /* Pods-Elissa_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08B62C214F7F637A0FC4AC93DC4412C /* Pods-Elissa_Example-dummy.m */; };
+		B10B6FDA3539881207EC95D46D2437F0 /* Elissa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */; };
+		B4ABFA80C86626CE6D65501AE3E626AD /* Pods-Elissa_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FD91A1CD88F162BAA1AF7B56D7D1B /* Pods-Elissa_Tests-dummy.m */; };
+		CD4312B7DF3D238A1995F0B71DDC953F /* Elissa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C9B0E71A14A14C1ECE2538D604BC7B /* Elissa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA5A924A42A736C1001996B156C260C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DD2995AF711132FC500604CF4877CEB;
+			remoteInfo = Elissa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		117BF226984736A43FE89516BE629799 /* Pods-Elissa_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Elissa_Tests.modulemap"; sourceTree = "<group>"; };
+		13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Elissa.swift; sourceTree = "<group>"; };
+		1C023A13679115466894DDEC562D0EEC /* Pods_Elissa_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elissa_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9D905C78305372478A8635D107516F /* Pods-Elissa_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Elissa_Tests-umbrella.h"; sourceTree = "<group>"; };
+		24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Elissa-dummy.m"; sourceTree = "<group>"; };
+		3117E4644BD28AB1B912A4CBD41328D4 /* Pods-Elissa_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Elissa_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		35FC9F4369E58C89C58E1EE99F67707F /* Pods-Elissa_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Example.release.xcconfig"; sourceTree = "<group>"; };
+		36050465F8447035ED47183ED560A984 /* Pods-Elissa_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		40986DB3A1F6E1656A3E5D856397B83A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F0C95B49DC6C0313DCE026E50506CFF /* Pods-Elissa_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Elissa_Example.modulemap"; sourceTree = "<group>"; };
+		4FACE636222980731C66B7DEE6DF9EEB /* Pods-Elissa_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Elissa_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5F4FD91A1CD88F162BAA1AF7B56D7D1B /* Pods-Elissa_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Elissa_Tests-dummy.m"; sourceTree = "<group>"; };
+		5FCE513D9014D3FFF1C763E43DCA4AB0 /* Pods_Elissa_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elissa_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63264435EDE126B9153BDE97A5EE22FA /* Pods-Elissa_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Elissa_Tests-resources.sh"; sourceTree = "<group>"; };
+		777D7EFB12F5BCA6AF3ED450210BFC0F /* Pods-Elissa_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Elissa_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		78A01B2ED7A1135AE168DDB4DEB5470B /* Elissa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Elissa.modulemap; sourceTree = "<group>"; };
+		7DE513A925A79FE3C5E939194B06F504 /* Pods-Elissa_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		85C38D53C9819EF73C826B4EF2C547A0 /* Pods-Elissa_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Elissa_Example-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95FD05DBBB23176C50E8A3640AA1C2D2 /* Elissa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Elissa-prefix.pch"; sourceTree = "<group>"; };
+		A08B62C214F7F637A0FC4AC93DC4412C /* Pods-Elissa_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Elissa_Example-dummy.m"; sourceTree = "<group>"; };
+		A6C9B0E71A14A14C1ECE2538D604BC7B /* Elissa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Elissa-umbrella.h"; sourceTree = "<group>"; };
+		AF1BBF2DE3A3E5F458EE1800090AAA95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C27175768F8042BC505D9AA8B74E87 /* Pods-Elissa_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Elissa_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BE14C3E933982EB7538074000F44AB37 /* Pods-Elissa_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Elissa_Example-resources.sh"; sourceTree = "<group>"; };
+		C7CF3E11FB5759434E540A11F6018395 /* Pods-Elissa_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Elissa_Example-frameworks.sh"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Elissa.xcconfig; sourceTree = "<group>"; };
+		E3CD7308EF3E1D4F45F34D82DC9F3E64 /* Elissa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Elissa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53F7004D01D87F2A684CD19090598FE /* Pods-Elissa_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EE58E964EBF7ADFE08DDFC11BDD8781E /* Pods-Elissa_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Elissa_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F8C05D40CD39BD64DA977AA9E5D9874B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39BCCEDFE110BD49D9083706C9F218EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CC0CB5A528A92BC0D764DF3150F801 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43454C3B7CF784FFCCDD205A75BFEA98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BC0D088DFB73BA3D3E722B499F478A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3CDBC3443311BB2BB29198090992905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A36CB509DBD910B82AB402306DF45C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35F3590802899D495B2993952E696A35 /* Pods-Elissa_Example */ = {
+			isa = PBXGroup;
+			children = (
+				40986DB3A1F6E1656A3E5D856397B83A /* Info.plist */,
+				4F0C95B49DC6C0313DCE026E50506CFF /* Pods-Elissa_Example.modulemap */,
+				3117E4644BD28AB1B912A4CBD41328D4 /* Pods-Elissa_Example-acknowledgements.markdown */,
+				EE58E964EBF7ADFE08DDFC11BDD8781E /* Pods-Elissa_Example-acknowledgements.plist */,
+				A08B62C214F7F637A0FC4AC93DC4412C /* Pods-Elissa_Example-dummy.m */,
+				C7CF3E11FB5759434E540A11F6018395 /* Pods-Elissa_Example-frameworks.sh */,
+				BE14C3E933982EB7538074000F44AB37 /* Pods-Elissa_Example-resources.sh */,
+				85C38D53C9819EF73C826B4EF2C547A0 /* Pods-Elissa_Example-umbrella.h */,
+				36050465F8447035ED47183ED560A984 /* Pods-Elissa_Example.debug.xcconfig */,
+				35FC9F4369E58C89C58E1EE99F67707F /* Pods-Elissa_Example.release.xcconfig */,
+			);
+			name = "Pods-Elissa_Example";
+			path = "Target Support Files/Pods-Elissa_Example";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4710AB31E15F55742F6864F88F9724FB /* Pods-Elissa_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F8C05D40CD39BD64DA977AA9E5D9874B /* Info.plist */,
+				117BF226984736A43FE89516BE629799 /* Pods-Elissa_Tests.modulemap */,
+				4FACE636222980731C66B7DEE6DF9EEB /* Pods-Elissa_Tests-acknowledgements.markdown */,
+				777D7EFB12F5BCA6AF3ED450210BFC0F /* Pods-Elissa_Tests-acknowledgements.plist */,
+				5F4FD91A1CD88F162BAA1AF7B56D7D1B /* Pods-Elissa_Tests-dummy.m */,
+				B9C27175768F8042BC505D9AA8B74E87 /* Pods-Elissa_Tests-frameworks.sh */,
+				63264435EDE126B9153BDE97A5EE22FA /* Pods-Elissa_Tests-resources.sh */,
+				1C9D905C78305372478A8635D107516F /* Pods-Elissa_Tests-umbrella.h */,
+				7DE513A925A79FE3C5E939194B06F504 /* Pods-Elissa_Tests.debug.xcconfig */,
+				E53F7004D01D87F2A684CD19090598FE /* Pods-Elissa_Tests.release.xcconfig */,
+			);
+			name = "Pods-Elissa_Tests";
+			path = "Target Support Files/Pods-Elissa_Tests";
+			sourceTree = "<group>";
+		};
+		5048A3DC579ED42D2B2936B098EF0AAD /* Elissa */ = {
+			isa = PBXGroup;
+			children = (
+				C4EDCDD537F29E66BA92BD6F2E941266 /* Elissa */,
+				A69080BB39BB40246ECE04D3E6EBCBF7 /* Support Files */,
+			);
+			name = Elissa;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		5D46DC6A032751A1749CB350E670CED4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				35F3590802899D495B2993952E696A35 /* Pods-Elissa_Example */,
+				4710AB31E15F55742F6864F88F9724FB /* Pods-Elissa_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7368D70FA5588FFC54C0C7FCA671835C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */,
+				34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		73CE24B119CD40160E42523C68384093 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3CD7308EF3E1D4F45F34D82DC9F3E64 /* Elissa.framework */,
+				1C023A13679115466894DDEC562D0EEC /* Pods_Elissa_Example.framework */,
+				5FCE513D9014D3FFF1C763E43DCA4AB0 /* Pods_Elissa_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				A67125336F789B60CC11A59AB66A799D /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				73CE24B119CD40160E42523C68384093 /* Products */,
+				5D46DC6A032751A1749CB350E670CED4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A67125336F789B60CC11A59AB66A799D /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5048A3DC579ED42D2B2936B098EF0AAD /* Elissa */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A69080BB39BB40246ECE04D3E6EBCBF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78A01B2ED7A1135AE168DDB4DEB5470B /* Elissa.modulemap */,
+				E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */,
+				24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */,
+				95FD05DBBB23176C50E8A3640AA1C2D2 /* Elissa-prefix.pch */,
+				A6C9B0E71A14A14C1ECE2538D604BC7B /* Elissa-umbrella.h */,
+				AF1BBF2DE3A3E5F458EE1800090AAA95 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Elissa";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4EDCDD537F29E66BA92BD6F2E941266 /* Elissa */ = {
+			isa = PBXGroup;
+			children = (
+				7368D70FA5588FFC54C0C7FCA671835C /* Classes */,
+			);
+			path = Elissa;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5F5D30C5BB8D275887B71CF2566AB260 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DCDB2469E1BFC27B0F11696CD6D667A /* Pods-Elissa_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74CCBEBDBD452C48640D731BB7BAB7B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4312B7DF3D238A1995F0B71DDC953F /* Elissa-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F719A25A17E9650E5990BA6D5F4EAB33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A36FC4CB8D8B1E64EC37CE76C54509 /* Pods-Elissa_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		10ACC537D6BF30A3B72EA7D57B905550 /* Pods-Elissa_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1A1375D1E8C5DB59A90175C53CA46E /* Build configuration list for PBXNativeTarget "Pods-Elissa_Tests" */;
+			buildPhases = (
+				2009C02007ED88DB3A85D87E4CF09A9F /* Sources */,
+				43454C3B7CF784FFCCDD205A75BFEA98 /* Frameworks */,
+				F719A25A17E9650E5990BA6D5F4EAB33 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Elissa_Tests";
+			productName = "Pods-Elissa_Tests";
+			productReference = 5FCE513D9014D3FFF1C763E43DCA4AB0 /* Pods_Elissa_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7DD2995AF711132FC500604CF4877CEB /* Elissa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C96449FAEE57DECF1D2B498D742DB3 /* Build configuration list for PBXNativeTarget "Elissa" */;
+			buildPhases = (
+				1DE9304C750B54CDD3652DA0666F9A56 /* Sources */,
+				E3CDBC3443311BB2BB29198090992905 /* Frameworks */,
+				74CCBEBDBD452C48640D731BB7BAB7B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Elissa;
+			productName = Elissa;
+			productReference = E3CD7308EF3E1D4F45F34D82DC9F3E64 /* Elissa.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		92C8E1109742A03772789025FBDAF788 /* Pods-Elissa_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65EFD9E4382AAB5D99C7019701F2D0AC /* Build configuration list for PBXNativeTarget "Pods-Elissa_Example" */;
+			buildPhases = (
+				0C494C305C80BA2E61A5E9203ECB4F40 /* Sources */,
+				39BCCEDFE110BD49D9083706C9F218EB /* Frameworks */,
+				5F5D30C5BB8D275887B71CF2566AB260 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCAF9D98A4FE341B742311561B6D9A11 /* PBXTargetDependency */,
+			);
+			name = "Pods-Elissa_Example";
+			productName = "Pods-Elissa_Example";
+			productReference = 1C023A13679115466894DDEC562D0EEC /* Pods_Elissa_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 73CE24B119CD40160E42523C68384093 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DD2995AF711132FC500604CF4877CEB /* Elissa */,
+				92C8E1109742A03772789025FBDAF788 /* Pods-Elissa_Example */,
+				10ACC537D6BF30A3B72EA7D57B905550 /* Pods-Elissa_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C494C305C80BA2E61A5E9203ECB4F40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2DE3DBF14EAA747449D06FB847326C1 /* Pods-Elissa_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DE9304C750B54CDD3652DA0666F9A56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566C8193857645FE91F1990C02BE57CC /* Elissa-dummy.m in Sources */,
+				B10B6FDA3539881207EC95D46D2437F0 /* Elissa.swift in Sources */,
+				34CD0A2B1CF8912700C6542E /* UIViewControllerExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2009C02007ED88DB3A85D87E4CF09A9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4ABFA80C86626CE6D65501AE3E626AD /* Pods-Elissa_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCAF9D98A4FE341B742311561B6D9A11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Elissa;
+			target = 7DD2995AF711132FC500604CF4877CEB /* Elissa */;
+			targetProxy = DA5A924A42A736C1001996B156C260C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03489AFBED755329567AF8FFCBF7A10A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Elissa/Elissa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Elissa/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Elissa/Elissa.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Elissa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		034E7D5C21CD58F297199FA5DE38EB3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DE513A925A79FE3C5E939194B06F504 /* Pods-Elissa_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Elissa_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Elissa_Tests/Pods-Elissa_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Elissa_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		753B89F2E45D17C48D5047C9367AD92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36050465F8447035ED47183ED560A984 /* Pods-Elissa_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Elissa_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Elissa_Example/Pods-Elissa_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Elissa_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEC5A5E5654156CB031446E5A40755B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Elissa/Elissa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Elissa/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Elissa/Elissa.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Elissa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA81AC955E28E1C1931711AB5265C3DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35FC9F4369E58C89C58E1EE99F67707F /* Pods-Elissa_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Elissa_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Elissa_Example/Pods-Elissa_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Elissa_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E9A64012765962A8E85BCE5E2D7550DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53F7004D01D87F2A684CD19090598FE /* Pods-Elissa_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Elissa_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Elissa_Tests/Pods-Elissa_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Elissa_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45C96449FAEE57DECF1D2B498D742DB3 /* Build configuration list for PBXNativeTarget "Elissa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEC5A5E5654156CB031446E5A40755B5 /* Debug */,
+				03489AFBED755329567AF8FFCBF7A10A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65EFD9E4382AAB5D99C7019701F2D0AC /* Build configuration list for PBXNativeTarget "Pods-Elissa_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				753B89F2E45D17C48D5047C9367AD92D /* Debug */,
+				CA81AC955E28E1C1931711AB5265C3DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1A1375D1E8C5DB59A90175C53CA46E /* Build configuration list for PBXNativeTarget "Pods-Elissa_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034E7D5C21CD58F297199FA5DE38EB3A /* Debug */,
+				E9A64012765962A8E85BCE5E2D7550DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

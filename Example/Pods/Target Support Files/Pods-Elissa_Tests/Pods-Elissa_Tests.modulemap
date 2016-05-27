@@ -1,0 +1,6 @@
+framework module Pods_Elissa_Tests {
+  umbrella header "Pods-Elissa_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

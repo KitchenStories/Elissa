@@ -84,7 +84,7 @@
         <!--Item 1-->
         <scene sceneID="paY-KF-Ma1">
             <objects>
-                <viewController id="M6a-ts-6LK" sceneMemberID="viewController">
+                <viewController id="M6a-ts-6LK" customClass="ViewController" customModule="Elissa_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HmZ-DC-Bqt"/>
                         <viewControllerLayoutGuide type="bottom" id="gck-oW-DUX"/>
@@ -92,9 +92,25 @@
                     <view key="view" contentMode="scaleToFill" id="ZxW-ct-oCg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-2Y-b24">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="someActionTrigger:" destination="M6a-ts-6LK" eventType="touchUpInside" id="Nmi-KQ-77G"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RGr-2Y-b24" firstAttribute="centerY" secondItem="ZxW-ct-oCg" secondAttribute="centerY" id="3F0-4d-QwF"/>
+                            <constraint firstItem="RGr-2Y-b24" firstAttribute="centerX" secondItem="ZxW-ct-oCg" secondAttribute="centerX" id="R3z-u5-Mym"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="xxJ-Yt-Icf"/>
+                    <connections>
+                        <outlet property="someActionButton" destination="RGr-2Y-b24" id="jwJ-oT-KVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6S-hP-XQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
