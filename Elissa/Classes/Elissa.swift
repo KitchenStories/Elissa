@@ -12,11 +12,10 @@ import Foundation
 public class Elissa: UIView {
 
     public static var isVisible: Bool {
-        return true
+        return false
     }
     
-//    public static var handler: CompletionHandlerClosure!
-//    static var contentView: ElissaContentView?
+    private static var staticElissa: Elissa?
 
     public static func dismiss() {
 //        if contentView != nil {
@@ -27,16 +26,8 @@ public class Elissa: UIView {
     
     static func showElissa(sourceView: UIView, imageName: String, message: String, handler: CompletionHandlerClosure) -> UIView? {
 
-        let elissa = Elissa(view: sourceView, imageName: imageName, message: message)
-        elissa.handler = handler
-
-        
-//        if contentView == nil {
-//            contentView = ElissaContentView(view: sourceView, imageName: imageName, message: message, handler: handler)
-//            self.handler = handler
-//        }
-//    
-//        return contentView
+        staticElissa = Elissa(view: sourceView, imageName: imageName, message: message)
+        staticElissa?.handler = handler
         return nil
     }
     
