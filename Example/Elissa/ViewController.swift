@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Elissa
 
 class ViewController: UIViewController {
 
@@ -14,14 +15,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     @IBAction func someActionTrigger(sender: UIButton) {
-        
-        print("show elissa")
+        showElissaFromTabbar(itemIndex: 4, imageName: "heartIcon", message: "Keep your uses active") {
+            print("completion handler called")
+        }
     }
 
 }
-

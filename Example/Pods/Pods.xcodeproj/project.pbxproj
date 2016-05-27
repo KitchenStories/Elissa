@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		11BC0D088DFB73BA3D3E722B499F478A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		21CC0CB5A528A92BC0D764DF3150F801 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		34CD0A2B1CF8912700C6542E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */; };
-		3A36CB509DBD910B82AB402306DF45C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		4DCDB2469E1BFC27B0F11696CD6D667A /* Pods-Elissa_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C38D53C9819EF73C826B4EF2C547A0 /* Pods-Elissa_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		566C8193857645FE91F1990C02BE57CC /* Elissa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */; };
+		546F85863D23DE4065B91965E07825C0 /* Elissa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C9B0E71A14A14C1ECE2538D604BC7B /* Elissa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		609306317F8B3EA47B13884AC7CF71F8 /* Elissa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */; };
+		7B6A9E25864EC673A0E2CC617A3EF5DD /* Elissa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F4C4EABC169584A3DBFC8CD45E73B /* Elissa.swift */; };
 		94A36FC4CB8D8B1E64EC37CE76C54509 /* Pods-Elissa_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C9D905C78305372478A8635D107516F /* Pods-Elissa_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2DE3DBF14EAA747449D06FB847326C1 /* Pods-Elissa_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08B62C214F7F637A0FC4AC93DC4412C /* Pods-Elissa_Example-dummy.m */; };
-		B10B6FDA3539881207EC95D46D2437F0 /* Elissa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */; };
 		B4ABFA80C86626CE6D65501AE3E626AD /* Pods-Elissa_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FD91A1CD88F162BAA1AF7B56D7D1B /* Pods-Elissa_Tests-dummy.m */; };
-		CD4312B7DF3D238A1995F0B71DDC953F /* Elissa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C9B0E71A14A14C1ECE2538D604BC7B /* Elissa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA06C672AD0402EDFC3D58ABBE17311C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB7FEDECEE13580DDDF0BB06F3138E /* UIViewControllerExtension.swift */; };
+		CF10ECAC5EC89478731E17BCAA12C95B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,22 +25,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7DD2995AF711132FC500604CF4877CEB;
+			remoteGlobalIDString = 6764E267609343FDC96B2D041ECE8F5A;
 			remoteInfo = Elissa;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		117BF226984736A43FE89516BE629799 /* Pods-Elissa_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Elissa_Tests.modulemap"; sourceTree = "<group>"; };
-		13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Elissa.swift; sourceTree = "<group>"; };
 		1C023A13679115466894DDEC562D0EEC /* Pods_Elissa_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elissa_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9D905C78305372478A8635D107516F /* Pods-Elissa_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Elissa_Tests-umbrella.h"; sourceTree = "<group>"; };
 		24CC3BD03E4B75E94252F72A49E3EF11 /* Elissa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Elissa-dummy.m"; sourceTree = "<group>"; };
 		3117E4644BD28AB1B912A4CBD41328D4 /* Pods-Elissa_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Elissa_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		35FC9F4369E58C89C58E1EE99F67707F /* Pods-Elissa_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Example.release.xcconfig"; sourceTree = "<group>"; };
 		36050465F8447035ED47183ED560A984 /* Pods-Elissa_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		40986DB3A1F6E1656A3E5D856397B83A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BFB7FEDECEE13580DDDF0BB06F3138E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4F0C95B49DC6C0313DCE026E50506CFF /* Pods-Elissa_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Elissa_Example.modulemap"; sourceTree = "<group>"; };
 		4FACE636222980731C66B7DEE6DF9EEB /* Pods-Elissa_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Elissa_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5F4FD91A1CD88F162BAA1AF7B56D7D1B /* Pods-Elissa_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Elissa_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		78A01B2ED7A1135AE168DDB4DEB5470B /* Elissa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Elissa.modulemap; sourceTree = "<group>"; };
 		7DE513A925A79FE3C5E939194B06F504 /* Pods-Elissa_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Elissa_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		85C38D53C9819EF73C826B4EF2C547A0 /* Pods-Elissa_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Elissa_Example-umbrella.h"; sourceTree = "<group>"; };
+		907F4C4EABC169584A3DBFC8CD45E73B /* Elissa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Elissa.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95FD05DBBB23176C50E8A3640AA1C2D2 /* Elissa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Elissa-prefix.pch"; sourceTree = "<group>"; };
 		A08B62C214F7F637A0FC4AC93DC4412C /* Pods-Elissa_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Elissa_Example-dummy.m"; sourceTree = "<group>"; };
@@ -83,11 +83,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3CDBC3443311BB2BB29198090992905 /* Frameworks */ = {
+		60955AF8DC4352051E0FD8A281ED0E39 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A36CB509DBD910B82AB402306DF45C7 /* Foundation.framework in Frameworks */,
+				CF10ECAC5EC89478731E17BCAA12C95B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +141,7 @@
 		5048A3DC579ED42D2B2936B098EF0AAD /* Elissa */ = {
 			isa = PBXGroup;
 			children = (
-				C4EDCDD537F29E66BA92BD6F2E941266 /* Elissa */,
+				ADCFDCC0BB3FA940586E48F9F8902470 /* Elissa */,
 				A69080BB39BB40246ECE04D3E6EBCBF7 /* Support Files */,
 			);
 			name = Elissa;
@@ -155,15 +155,6 @@
 				4710AB31E15F55742F6864F88F9724FB /* Pods-Elissa_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7368D70FA5588FFC54C0C7FCA671835C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				13448B52600799FE15E61BC9BFD701CB /* Elissa.swift */,
-				34CD0A2A1CF8912700C6542E /* UIViewControllerExtension.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		73CE24B119CD40160E42523C68384093 /* Products */ = {
@@ -185,6 +176,15 @@
 				73CE24B119CD40160E42523C68384093 /* Products */,
 				5D46DC6A032751A1749CB350E670CED4 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		816D813B47155907AA25D0F707B20F3F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				907F4C4EABC169584A3DBFC8CD45E73B /* Elissa.swift */,
+				4BFB7FEDECEE13580DDDF0BB06F3138E /* UIViewControllerExtension.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		A67125336F789B60CC11A59AB66A799D /* Development Pods */ = {
@@ -209,6 +209,14 @@
 			path = "Example/Pods/Target Support Files/Elissa";
 			sourceTree = "<group>";
 		};
+		ADCFDCC0BB3FA940586E48F9F8902470 /* Elissa */ = {
+			isa = PBXGroup;
+			children = (
+				816D813B47155907AA25D0F707B20F3F /* Classes */,
+			);
+			path = Elissa;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,30 +225,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C4EDCDD537F29E66BA92BD6F2E941266 /* Elissa */ = {
-			isa = PBXGroup;
-			children = (
-				7368D70FA5588FFC54C0C7FCA671835C /* Classes */,
-			);
-			path = Elissa;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5D670976C774999490EBC43CEB1CE819 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				546F85863D23DE4065B91965E07825C0 /* Elissa-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F5D30C5BB8D275887B71CF2566AB260 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4DCDB2469E1BFC27B0F11696CD6D667A /* Pods-Elissa_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74CCBEBDBD452C48640D731BB7BAB7B5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD4312B7DF3D238A1995F0B71DDC953F /* Elissa-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +272,13 @@
 			productReference = 5FCE513D9014D3FFF1C763E43DCA4AB0 /* Pods_Elissa_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7DD2995AF711132FC500604CF4877CEB /* Elissa */ = {
+		6764E267609343FDC96B2D041ECE8F5A /* Elissa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45C96449FAEE57DECF1D2B498D742DB3 /* Build configuration list for PBXNativeTarget "Elissa" */;
+			buildConfigurationList = A7622BED55E719D73AC7BB2975203421 /* Build configuration list for PBXNativeTarget "Elissa" */;
 			buildPhases = (
-				1DE9304C750B54CDD3652DA0666F9A56 /* Sources */,
-				E3CDBC3443311BB2BB29198090992905 /* Frameworks */,
-				74CCBEBDBD452C48640D731BB7BAB7B5 /* Headers */,
+				A5C490AD327947D85238F9AC8F0EFDCA /* Sources */,
+				60955AF8DC4352051E0FD8A281ED0E39 /* Frameworks */,
+				5D670976C774999490EBC43CEB1CE819 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -328,7 +328,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DD2995AF711132FC500604CF4877CEB /* Elissa */,
+				6764E267609343FDC96B2D041ECE8F5A /* Elissa */,
 				92C8E1109742A03772789025FBDAF788 /* Pods-Elissa_Example */,
 				10ACC537D6BF30A3B72EA7D57B905550 /* Pods-Elissa_Tests */,
 			);
@@ -344,21 +344,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1DE9304C750B54CDD3652DA0666F9A56 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				566C8193857645FE91F1990C02BE57CC /* Elissa-dummy.m in Sources */,
-				B10B6FDA3539881207EC95D46D2437F0 /* Elissa.swift in Sources */,
-				34CD0A2B1CF8912700C6542E /* UIViewControllerExtension.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2009C02007ED88DB3A85D87E4CF09A9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B4ABFA80C86626CE6D65501AE3E626AD /* Pods-Elissa_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C490AD327947D85238F9AC8F0EFDCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609306317F8B3EA47B13884AC7CF71F8 /* Elissa-dummy.m in Sources */,
+				7B6A9E25864EC673A0E2CC617A3EF5DD /* Elissa.swift in Sources */,
+				BA06C672AD0402EDFC3D58ABBE17311C /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,41 +368,12 @@
 		DCAF9D98A4FE341B742311561B6D9A11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Elissa;
-			target = 7DD2995AF711132FC500604CF4877CEB /* Elissa */;
+			target = 6764E267609343FDC96B2D041ECE8F5A /* Elissa */;
 			targetProxy = DA5A924A42A736C1001996B156C260C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03489AFBED755329567AF8FFCBF7A10A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Elissa/Elissa-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Elissa/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Elissa/Elissa.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Elissa;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		034E7D5C21CD58F297199FA5DE38EB3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DE513A925A79FE3C5E939194B06F504 /* Pods-Elissa_Tests.debug.xcconfig */;
@@ -508,7 +479,7 @@
 			};
 			name = Debug;
 		};
-		BEC5A5E5654156CB031446E5A40755B5 /* Debug */ = {
+		7BBEB513B0073AF03BCEDAD58D52F3B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */;
 			buildSettings = {
@@ -537,6 +508,35 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		C61F774C8DE351BA52A45D964ACCE712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00F189F3632654C8B15141C5872122C /* Elissa.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Elissa/Elissa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Elissa/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Elissa/Elissa.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Elissa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		CA81AC955E28E1C1931711AB5265C3DF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -658,15 +658,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45C96449FAEE57DECF1D2B498D742DB3 /* Build configuration list for PBXNativeTarget "Elissa" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BEC5A5E5654156CB031446E5A40755B5 /* Debug */,
-				03489AFBED755329567AF8FFCBF7A10A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		65EFD9E4382AAB5D99C7019701F2D0AC /* Build configuration list for PBXNativeTarget "Pods-Elissa_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -681,6 +672,15 @@
 			buildConfigurations = (
 				034E7D5C21CD58F297199FA5DE38EB3A /* Debug */,
 				E9A64012765962A8E85BCE5E2D7550DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7622BED55E719D73AC7BB2975203421 /* Build configuration list for PBXNativeTarget "Elissa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BBEB513B0073AF03BCEDAD58D52F3B8 /* Debug */,
+				C61F774C8DE351BA52A45D964ACCE712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

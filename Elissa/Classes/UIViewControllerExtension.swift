@@ -8,11 +8,11 @@
 
 import Foundation
 
-typealias CompletionHandlerClosure = () -> ()?
+public typealias CompletionHandlerClosure = () -> ()?
 
 extension UIViewController {
     
-    func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, imageName: String, message: String, onTouchHandler: CompletionHandlerClosure) {
+    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, imageName: String, message: String, onTouchHandler: CompletionHandlerClosure) {
         guard tabBarController != nil else { return }
         
         guard tabbarItemIndex <= tabBarController?.tabBar.items?.count else { return }
@@ -37,7 +37,7 @@ extension UIViewController {
         }
     }
     
-    func dismissElissa() {
+    public func dismissElissa() {
         Elissa.dismiss()
     }
     
