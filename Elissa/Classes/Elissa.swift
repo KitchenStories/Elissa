@@ -18,17 +18,16 @@ public class Elissa: UIView {
     private static var staticElissa: Elissa?
 
     public static func dismiss() {
-//        if contentView != nil {
-//            contentView!.removeFromSuperview()
-//            contentView = nil
-//        }
+        if staticElissa != nil {
+            staticElissa!.removeFromSuperview()
+            staticElissa = nil
+        }
     }
     
     static func showElissa(sourceView: UIView, imageName: String, message: String, handler: CompletionHandlerClosure) -> UIView? {
-
         staticElissa = Elissa(view: sourceView, imageName: imageName, message: message)
         staticElissa?.handler = handler
-        return nil
+        return staticElissa
     }
     
     private var handler: CompletionHandlerClosure!
