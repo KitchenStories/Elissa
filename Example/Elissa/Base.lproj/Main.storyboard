@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3RT-Xf-SgI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3RT-Xf-SgI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="VUg-vc-7oh"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="paper-plane-item" id="VUg-vc-7oh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vb6-j3-snK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" id="0H5-br-pg3"/>
+                    <tabBarItem key="tabBarItem" title="Item 3" image="text-align-item" id="0H5-br-pg3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBq-kv-Ebc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 4" id="RZd-gd-lXC"/>
+                    <tabBarItem key="tabBarItem" title="Item 4" image="viewer-item" id="RZd-gd-lXC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ID-RV-qAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 5" id="dyv-ol-RMw"/>
+                    <tabBarItem key="tabBarItem" title="Item 5" image="wifi-item" id="dyv-ol-RMw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y58-5u-p99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,8 +94,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-2Y-b24">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="240" y="235" width="120" height="30"/>
+                                <state key="normal" title="Significant Action"/>
                                 <connections>
                                     <action selector="someActionTrigger:" destination="M6a-ts-6LK" eventType="touchUpInside" id="Nmi-KQ-77G"/>
                                 </connections>
@@ -103,11 +103,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RGr-2Y-b24" firstAttribute="centerY" secondItem="ZxW-ct-oCg" secondAttribute="centerY" id="3F0-4d-QwF"/>
+                            <constraint firstItem="RGr-2Y-b24" firstAttribute="centerY" secondItem="ZxW-ct-oCg" secondAttribute="centerY" constant="-50" id="3F0-4d-QwF"/>
                             <constraint firstItem="RGr-2Y-b24" firstAttribute="centerX" secondItem="ZxW-ct-oCg" secondAttribute="centerX" id="R3z-u5-Mym"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xxJ-Yt-Icf"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="folder-item" id="xxJ-Yt-Icf"/>
                     <connections>
                         <outlet property="someActionButton" destination="RGr-2Y-b24" id="jwJ-oT-KVx"/>
                     </connections>
@@ -138,4 +138,11 @@
             <point key="canvasLocation" x="-83" y="481"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder-item" width="30" height="30"/>
+        <image name="paper-plane-item" width="30" height="30"/>
+        <image name="text-align-item" width="30" height="30"/>
+        <image name="viewer-item" width="30" height="30"/>
+        <image name="wifi-item" width="30" height="30"/>
+    </resources>
 </document>

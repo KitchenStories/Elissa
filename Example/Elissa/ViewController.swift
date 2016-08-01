@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func someActionTrigger(sender: UIButton) {
-        showElissaFromTabbar(itemIndex: 4, imageName: "heartIcon", message: "Keep your uses active") {
-            print("completion handler called")
+        showElissaFromTabbar(itemIndex: 4, imageName: "heartIcon", message: "Keep your uses active") { [weak self] in
+            self?.dismissElissa()
         }
     }
 
