@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34C475771D5B8C5400F5C376 /* Elissa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C475761D5B8C5400F5C376 /* Elissa.framework */; };
 		5A2114C671249A197AE44A4C /* Pods_Elissa_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D53A9ECBC4E4E5C296F4451 /* Pods_Elissa_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1D53A9ECBC4E4E5C296F4451 /* Pods_Elissa_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elissa_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C475761D5B8C5400F5C376 /* Elissa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Elissa.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Elissa-hdzlbyxrhghhpjhjjvaycutatcii/Build/Products/Debug-iphoneos/Elissa/Elissa.framework"; sourceTree = "<group>"; };
 		44A4983BD2D849D10E9494A9 /* Pods-Elissa_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elissa_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elissa_Tests/Pods-Elissa_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BA1D8919C77272CA1389CA2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		58F567B725EEB4538427650D /* Pods_Elissa_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elissa_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C475771D5B8C5400F5C376 /* Elissa.framework in Frameworks */,
 				C79C02ABBBD98B2D45E7FADD /* Pods_Elissa_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 		AF10AE0A5B0715EDD60C8538 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34C475761D5B8C5400F5C376 /* Elissa.framework */,
 				58F567B725EEB4538427650D /* Pods_Elissa_Example.framework */,
 				1D53A9ECBC4E4E5C296F4451 /* Pods_Elissa_Tests.framework */,
 			);
