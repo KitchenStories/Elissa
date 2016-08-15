@@ -18,7 +18,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func someActionTrigger(sender: UIButton) {
-        showElissaFromTabbar(itemIndex: 4, imageName: "heartIcon", message: "Keep your uses active") { [weak self] in
+        
+        var elissaConfig = ElissaConfiguration()
+        elissaConfig.message = "Find it here"
+        elissaConfig.image = UIImage(named: "heartIcon") ?? UIImage()
+        elissaConfig.backgroundColor = UIColor.redColor()
+        
+        showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { [weak self] in
             self?.dismissElissa()
         }
     }

@@ -12,7 +12,7 @@ public typealias CompletionHandlerClosure = () -> ()?
 
 extension UIViewController {
     
-    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, imageName: String, message: String, onTouchHandler: CompletionHandlerClosure) {
+    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, configuration: ElissaConfiguration, onTouchHandler: CompletionHandlerClosure) {
         guard tabBarController != nil else { return }
         
         guard tabbarItemIndex <= tabBarController?.tabBar.items?.count else { return }
@@ -25,7 +25,7 @@ extension UIViewController {
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            if let elissa = Elissa.showElissa(self.updatePresentingFrame(view), imageName: imageName, message: message, handler: onTouchHandler) {
+            if let elissa = Elissa.showElissa(self.updatePresentingFrame(view), image: configuration.image, message: configuration.message, handler: onTouchHandler) {
                 self.tabBarController?.view.addSubview(elissa)
                 elissa.transform = CGAffineTransformMakeScale(0.8, 0.8)
                 UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .CurveEaseInOut, animations: {

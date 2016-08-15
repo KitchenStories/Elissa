@@ -8,6 +8,18 @@
 
 import Foundation
 
+public struct ElissaConfiguration {
+    public var message: String?
+    public var image: UIImage
+    public var backgroundColor: UIColor?
+    
+    public init() {
+        message = ""
+        backgroundColor = UIColor.clearColor()
+        image = UIImage()
+    }
+    
+}
 
 public class Elissa: UIView {
 
@@ -24,8 +36,8 @@ public class Elissa: UIView {
         }
     }
     
-    static func showElissa(sourceView: UIView, imageName: String, message: String, handler: CompletionHandlerClosure) -> UIView? {
-        staticElissa = Elissa(view: sourceView, imageName: imageName, message: message)
+    static func showElissa(sourceView: UIView, image: UIImage, message: String?, handler: CompletionHandlerClosure) -> UIView? {
+        staticElissa = Elissa(view: sourceView, image: image, message: message ?? "")
         staticElissa?.handler = handler
         return staticElissa
     }
@@ -57,7 +69,7 @@ public class Elissa: UIView {
     private (set) var popupMinMarginScreenBounds: CGFloat = 5.0
 
     
-    private init(view: UIView, imageName: String, message: String) {
+    private init(view: UIView, image: UIImage, message: String) {
         super.init(frame: CGRect.zero)
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -68,7 +80,7 @@ public class Elissa: UIView {
         
         embeddedContentView.backgroundColor = UIColor.lightGrayColor()
         messageLabel.text = message
-        iconImageView.image = UIImage(named: imageName)
+        iconImageView.image = image
         
         calculatePositon(sourceView: view, contentView: self)
         embeddedContentView.layer.cornerRadius = 3.0
@@ -120,7 +132,6 @@ public class Elissa: UIView {
         path.closePath()
         
         shapeLayer.path = path.CGPath
-//        shapeLayer.fillColor = Theme.currentTheme().highlightColor.CGColor
         shapeLayer.fillColor = UIColor.lightGrayColor().CGColor
         popupView.layer.addSublayer(shapeLayer)
     }
