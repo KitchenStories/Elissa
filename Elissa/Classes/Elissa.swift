@@ -36,8 +36,8 @@ public class Elissa: UIView {
         }
     }
     
-    static func showElissa(sourceView: UIView, image: UIImage, message: String?, handler: CompletionHandlerClosure) -> UIView? {
-        staticElissa = Elissa(view: sourceView, image: image, message: message ?? "")
+    static func showElissa(sourceView: UIView, configuration: ElissaConfiguration, handler: CompletionHandlerClosure) -> UIView? {
+        staticElissa = Elissa(view: sourceView, configuration: configuration)
         staticElissa?.handler = handler
         return staticElissa
     }
@@ -69,7 +69,7 @@ public class Elissa: UIView {
     private (set) var popupMinMarginScreenBounds: CGFloat = 5.0
 
     
-    private init(view: UIView, image: UIImage, message: String) {
+    private init(view: UIView, configuration: ElissaConfiguration) {
         super.init(frame: CGRect.zero)
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -78,11 +78,11 @@ public class Elissa: UIView {
         guard let embeddedContentView = views.first as? UIView else { return }
         addSubview(embeddedContentView)
         
-        embeddedContentView.backgroundColor = UIColor.lightGrayColor()
-        messageLabel.text = message
-        iconImageView.image = image
+        embeddedContentView.backgroundColor = configuration.backgroundColor
+        messageLabel.text = configuration.message
+        iconImageView.image = configuration.image
         
-        calculatePositon(sourceView: view, contentView: self)
+        calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor!)
         embeddedContentView.layer.cornerRadius = 3.0
         
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
@@ -93,7 +93,7 @@ public class Elissa: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func calculatePositon(sourceView sourceView: UIView, contentView: UIView) -> UIView {
+    private func calculatePositon(sourceView sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
         let size = messageLabel.intrinsicContentSize()
         
         var updatedFrame = CGRect()
@@ -115,12 +115,12 @@ public class Elissa: UIView {
             applyOffset(offset, view: contentView)
         }
         
-        drawTriangleForTabBarItemIndicator(contentView, tabbarItem: sourceView)
+        drawTriangleForTabBarItemIndicator(contentView, tabbarItem: sourceView, backgroundColor: backgroundColor)
         
         return contentView
     }
     
-    private func drawTriangleForTabBarItemIndicator(popupView: UIView, tabbarItem: UIView) {
+    private func drawTriangleForTabBarItemIndicator(popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath()
         let startPoint = (tabbarItem.center.x - arrowSize.width / 2) - popupView.frame.origin.x
@@ -132,7 +132,7 @@ public class Elissa: UIView {
         path.closePath()
         
         shapeLayer.path = path.CGPath
-        shapeLayer.fillColor = UIColor.lightGrayColor().CGColor
+        shapeLayer.fillColor = backgroundColor.CGColor
         popupView.layer.addSublayer(shapeLayer)
     }
     

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBAction func someActionTrigger(sender: UIButton) {
         
         var elissaConfig = ElissaConfiguration()
-        elissaConfig.message = "Find it here"
+        elissaConfig.message = "Find it here or there"
         elissaConfig.image = UIImage(named: "heartIcon") ?? UIImage()
         elissaConfig.backgroundColor = UIColor.redColor()
         
