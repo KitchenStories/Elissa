@@ -20,13 +20,14 @@ class ViewController: UIViewController {
     @IBAction func someActionTrigger(sender: UIButton) {
         
         var elissaConfig = ElissaConfiguration()
-        elissaConfig.message = "Find it here or there"
+        elissaConfig.message = "Find your favorites here"
         elissaConfig.image = UIImage(named: "heartIcon") ?? UIImage()
-        elissaConfig.backgroundColor = UIColor.redColor()
+        elissaConfig.font = UIFont.systemFontOfSize(17)
+        elissaConfig.textColor = UIColor(red: 91/255, green: 91/255, blue: 91/255, alpha: 1.0)
+        elissaConfig.backgroundColor = UIColor(red: 241/255, green: 215/255, blue: 85/255, alpha: 1.0)
         
         showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { [weak self] in
             self?.dismissElissa()
         }
     }
-
 }

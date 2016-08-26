@@ -12,6 +12,8 @@ public struct ElissaConfiguration {
     public var message: String?
     public var image: UIImage
     public var backgroundColor: UIColor?
+    public var textColor: UIColor?
+    public var font: UIFont?
     
     public init() {
         message = ""
@@ -45,20 +47,8 @@ public class Elissa: UIView {
     private var handler: CompletionHandlerClosure!
     
     @IBOutlet weak var messageLabel: UILabel!
-//        {
-//        didSet {
-//            messageLabel.font = Theme.currentTheme().textFont
-//            messageLabel.textColor = Theme.currentTheme().textColor
-//        }
-//    }
-    
     @IBOutlet weak var iconImageView: UIImageView!
-//        {
-//        didSet {
-//            tintColor = Theme.currentTheme().textColor
-//        }
-//    }
-//    
+ 
     @IBAction func actionButtonTapped(sender: UIButton) {
         handler()
     }
@@ -79,8 +69,13 @@ public class Elissa: UIView {
         addSubview(embeddedContentView)
         
         embeddedContentView.backgroundColor = configuration.backgroundColor
+        
         messageLabel.text = configuration.message
+        messageLabel.font = configuration.font
+        messageLabel.textColor = configuration.textColor
+        
         iconImageView.image = configuration.image
+        iconImageView.tintColor = configuration.textColor
         
         calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor!)
         embeddedContentView.layer.cornerRadius = 3.0
@@ -103,7 +98,7 @@ public class Elissa: UIView {
         updatedFrame.origin.y = (sourceView.frame.origin.y - sourceView.frame.size.height) + offsetToSourceView
         
         contentView.frame = updatedFrame
-        contentView.layer.cornerRadius = 3
+        contentView.layer.cornerRadius = 5
         
         let checkPoint = contentView.frame.origin.x + contentView.frame.size.width
         let appWidth = UIScreen.mainScreen().applicationFrame.size.width
