@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 [![Platform](https://img.shields.io/cocoapods/p/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 
-![](https://github.com/KitchenStories/Elissa/blob/master/images/Elissa_logo.png.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/Elissa_logo.png)
 
 Display a notification on top of a UITabBarItem to reveal additional user guidance.
 
@@ -26,8 +26,8 @@ Presenting Elissa is as simple as that:
 
 ```
 showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { [weak self] in
-            self?.dismissElissa()
-        }
+	self?.dismissElissa()
+}
 ```
 
 Additionally (and optionally) you can pass a closure that is executed once the user taps the notification.
