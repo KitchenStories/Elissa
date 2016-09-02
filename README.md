@@ -1,6 +1,6 @@
 # Elissa
 
-[![CI Status](http://img.shields.io/travis/Kersten Broich/Elissa.svg?style=flat)](https://travis-ci.org/Kersten Broich/Elissa)
+[![CI Status](http://img.shields.io/travis/KitchenStories/Elissa.svg?style=flat)](https://travis-ci.org/KitchenStories/Elissa)
 [![Version](https://img.shields.io/cocoapods/v/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 [![License](https://img.shields.io/cocoapods/l/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 [![Platform](https://img.shields.io/cocoapods/p/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
