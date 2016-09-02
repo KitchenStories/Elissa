@@ -13,7 +13,7 @@ Display a notification on top of a UITabBarItem to reveal additional user guidan
 
 You can display Elissa according to your app’s theming by creating and passing a fully customisable configuration.
 
-```
+```swift
 var elissaConfig = ElissaConfiguration()
 elissaConfig.message = "Find your favorites here"
 elissaConfig.image = UIImage(named: "heartIcon") ?? UIImage()
@@ -24,7 +24,7 @@ elissaConfig.backgroundColor = UIColor(red: 241/255, green: 215/255, blue: 85/25
 
 Presenting Elissa is as simple as that:
 
-```
+```swift
 showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { [weak self] in
 	self?.dismissElissa()
 }
