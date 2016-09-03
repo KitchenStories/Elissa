@@ -10,23 +10,18 @@ import Foundation
 
 public struct ElissaConfiguration {
     public var message: String?
-    public var image: UIImage
+    public var image: UIImage?
     public var backgroundColor: UIColor?
     public var textColor: UIColor?
     public var font: UIFont?
     
-    public init() {
-        message = ""
-        backgroundColor = UIColor.clearColor()
-        image = UIImage()
-    }
-    
+    public init() {}
 }
 
 public class Elissa: UIView {
 
     public static var isVisible: Bool {
-        return false
+        return staticElissa != nil
     }
     
     private static var staticElissa: Elissa?
@@ -53,11 +48,10 @@ public class Elissa: UIView {
         handler()
     }
     
-    private (set) var arrowSize: CGSize = CGSize(width: 20, height: 10)
-    private (set) var popupHeight: CGFloat = 36.0
-    private (set) var offsetToSourceView: CGFloat = 5.0
-    private (set) var popupMinMarginScreenBounds: CGFloat = 5.0
-
+    private let arrowSize: CGSize = CGSize(width: 20, height: 10)
+    private let popupHeight: CGFloat = 36.0
+    private let offsetToSourceView: CGFloat = 5.0
+    private let popupMinMarginScreenBounds: CGFloat = 5.0
     
     private init(view: UIView, configuration: ElissaConfiguration) {
         super.init(frame: CGRect.zero)
@@ -77,7 +71,7 @@ public class Elissa: UIView {
         iconImageView.image = configuration.image
         iconImageView.tintColor = configuration.textColor
         
-        calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor!)
+        calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor ?? self.tintColor)
         embeddedContentView.layer.cornerRadius = 3.0
         
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
