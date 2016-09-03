@@ -24,16 +24,16 @@ extension UIViewController {
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            if let elissa = Elissa.showElissa(self.updatePresentingFrame(view), configuration: configuration, handler: onTouchHandler) {
-                self.tabBarController?.view.addSubview(elissa)
-                elissa.transform = CGAffineTransformMakeScale(0.8, 0.8)
-                
-                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .CurveEaseInOut, animations: {
-                    elissa.transform = CGAffineTransformIdentity
-                    }, completion: { _ in
-                        self.tabBarController?.view.bringSubviewToFront(elissa)
-                })
-            }
+            guard let elissa = Elissa.showElissa(self.updatePresentingFrame(view), configuration: configuration, handler: onTouchHandler) else { return }
+            
+            self.tabBarController?.view.addSubview(elissa)
+            elissa.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            
+            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .CurveEaseInOut, animations: {
+                elissa.transform = CGAffineTransformIdentity
+                }, completion: { _ in
+                    self.tabBarController?.view.bringSubviewToFront(elissa)
+            })
         }
     }
     
