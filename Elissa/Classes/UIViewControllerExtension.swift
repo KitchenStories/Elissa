@@ -28,6 +28,7 @@ extension UIViewController {
             if let elissa = Elissa.showElissa(self.updatePresentingFrame(view), configuration: configuration, handler: onTouchHandler) {
                 self.tabBarController?.view.addSubview(elissa)
                 elissa.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                
                 UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .CurveEaseInOut, animations: {
                     elissa.transform = CGAffineTransformIdentity
                     }, completion: { _ in
@@ -35,10 +36,6 @@ extension UIViewController {
                 })
             }
         }
-    }
-    
-    public func dismissElissa() {
-        Elissa.dismiss()
     }
     
     private func updatePresentingFrame(sourceView: UIView) -> UIView {
