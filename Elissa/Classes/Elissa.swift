@@ -51,7 +51,7 @@ public class Elissa: UIView {
     private let arrowSize: CGSize = CGSize(width: 20, height: 10)
     private let popupHeight: CGFloat = 36.0
     private let offsetToSourceView: CGFloat = 5.0
-    private let popupMinMarginScreenBounds: CGFloat = 5.0
+    private var popupMinMarginScreenBounds: CGFloat = 5.0
     
     private init(view: UIView, configuration: ElissaConfiguration) {
         super.init(frame: CGRect.zero)
@@ -99,10 +99,13 @@ public class Elissa: UIView {
         
         var offset: CGFloat = 0.0
         
-        if checkPoint > UIScreen.mainScreen().applicationFrame.size.width {
+        if checkPoint > appWidth {
             offset = checkPoint - appWidth
-            applyOffset(offset, view: contentView)
+        } else if contentView.frame.origin.x < 5 {
+            popupMinMarginScreenBounds *= -1
+            offset = contentView.frame.origin.x
         }
+        applyOffset(offset, view: contentView)
         
         drawTriangleForTabBarItemIndicator(contentView, tabbarItem: sourceView, backgroundColor: backgroundColor)
         
