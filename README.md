@@ -36,7 +36,17 @@ Additionally (and optionally) you can pass a closure that is executed once the u
 
 ![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo.gif)
 
+Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
+
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_0.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_1.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_2.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_3.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_4.png)
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+
 
 ## Requirements
 
