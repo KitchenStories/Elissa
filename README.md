@@ -25,8 +25,8 @@ elissaConfig.backgroundColor = UIColor(red: 241/255, green: 215/255, blue: 85/25
 Presenting Elissa is as simple as that:
 
 ```swift
-showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { [weak self] in
-	self?.dismissElissa()
+showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { 
+	Elissa.dismiss()
 }
 ```
 
