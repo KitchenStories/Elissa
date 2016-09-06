@@ -83,10 +83,8 @@ public class Elissa: UIView {
     }
     
     private func calculatePositon(sourceView sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
-        let size = messageLabel.intrinsicContentSize()
-        
         var updatedFrame = CGRect()
-        updatedFrame.size.width = size.width + 45 // TODO: get values from autolayout constraints
+        updatedFrame.size.width = contentView.frame.size.width + 45 // TODO: get values from autolayout constraints
         updatedFrame.size.height = popupHeight
         updatedFrame.origin.x = sourceView.center.x - updatedFrame.size.width / 2
         updatedFrame.origin.y = (sourceView.frame.origin.y - sourceView.frame.size.height) + offsetToSourceView
