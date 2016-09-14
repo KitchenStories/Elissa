@@ -7,41 +7,61 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 public typealias CompletionHandlerClosure = () -> ()?
 
 extension UIViewController {
     
-    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, configuration: ElissaConfiguration, onTouchHandler: CompletionHandlerClosure) {
+    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, configuration: ElissaConfiguration, onTouchHandler: @escaping CompletionHandlerClosure) {
         guard
             tabBarController != nil && tabbarItemIndex <= tabBarController?.tabBar.items?.count,
-            let view = tabBarController?.tabBar.items?[tabbarItemIndex].valueForKey("view") as? UIView
+            let view = tabBarController?.tabBar.items?[tabbarItemIndex].value(forKey: "view") as? UIView
             else { return }
         
         if Elissa.isVisible {
             Elissa.dismiss()
         }
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
+        let delayTime = DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
             guard let elissa = Elissa.showElissa(self.updatePresentingFrame(view), configuration: configuration, handler: onTouchHandler) else { return }
             
             self.tabBarController?.view.addSubview(elissa)
-            elissa.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            elissa.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             
-            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .CurveEaseInOut, animations: {
-                elissa.transform = CGAffineTransformIdentity
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: UIViewAnimationOptions(), animations: {
+                elissa.transform = CGAffineTransform.identity
                 }, completion: { _ in
-                    self.tabBarController?.view.bringSubviewToFront(elissa)
+                    self.tabBarController?.view.bringSubview(toFront: elissa)
             })
         }
     }
     
-    private func updatePresentingFrame(sourceView: UIView) -> UIView {
+    fileprivate func updatePresentingFrame(_ sourceView: UIView) -> UIView {
         var sourceFrame = sourceView.frame
         
         if let height = tabBarController?.tabBar.frame.size.height {
-            sourceFrame.origin.y = UIScreen.mainScreen().applicationFrame.size.height - height / 2
+            sourceFrame.origin.y = UIScreen.main.applicationFrame.size.height - height / 2
         }
         
         let updatedSourceView = UIView(frame: sourceFrame)

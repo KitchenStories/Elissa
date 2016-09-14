@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3RT-Xf-SgI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3RT-Xf-SgI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Item 2-->
@@ -14,9 +15,9 @@
                         <viewControllerLayoutGuide type="bottom" id="vrj-wT-too"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UR8-qD-aqA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" image="paper-plane-item" id="VUg-vc-7oh"/>
                 </viewController>
@@ -33,9 +34,9 @@
                         <viewControllerLayoutGuide type="bottom" id="iEz-6o-Lfe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AyI-pJ-SkA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 3" image="text-align-item" id="0H5-br-pg3"/>
                 </viewController>
@@ -52,9 +53,9 @@
                         <viewControllerLayoutGuide type="bottom" id="DAT-MC-TTo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ulq-0t-LKB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 4" image="viewer-item" id="RZd-gd-lXC"/>
                 </viewController>
@@ -71,9 +72,9 @@
                         <viewControllerLayoutGuide type="bottom" id="PoH-4a-Ll5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rga-dh-RYW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 5" image="wifi-item" id="dyv-ol-RMw"/>
                 </viewController>
@@ -90,18 +91,17 @@
                         <viewControllerLayoutGuide type="bottom" id="gck-oW-DUX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZxW-ct-oCg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-2Y-b24">
-                                <rect key="frame" x="240" y="235" width="120" height="30"/>
                                 <state key="normal" title="Significant Action"/>
                                 <connections>
-                                    <action selector="someActionTrigger:" destination="M6a-ts-6LK" eventType="touchUpInside" id="Nmi-KQ-77G"/>
+                                    <action selector="someActionTriggerWithSender:" destination="M6a-ts-6LK" eventType="touchUpInside" id="blz-99-ZkZ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RGr-2Y-b24" firstAttribute="centerY" secondItem="ZxW-ct-oCg" secondAttribute="centerY" constant="-50" id="3F0-4d-QwF"/>
                             <constraint firstItem="RGr-2Y-b24" firstAttribute="centerX" secondItem="ZxW-ct-oCg" secondAttribute="centerX" id="R3z-u5-Mym"/>
@@ -123,7 +123,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vku-Po-49f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="M6a-ts-6LK" kind="relationship" relationship="viewControllers" id="YYE-wJ-bhN"/>

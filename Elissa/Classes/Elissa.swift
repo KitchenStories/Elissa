@@ -18,48 +18,48 @@ public struct ElissaConfiguration {
     public init() {}
 }
 
-public class Elissa: UIView {
+open class Elissa: UIView {
 
-    public static var isVisible: Bool {
+    open static var isVisible: Bool {
         return staticElissa != nil
     }
     
-    private static var staticElissa: Elissa?
+    fileprivate static var staticElissa: Elissa?
 
-    public static func dismiss() {
+    open static func dismiss() {
         if staticElissa != nil {
             staticElissa!.removeFromSuperview()
             staticElissa = nil
         }
     }
     
-    static func showElissa(sourceView: UIView, configuration: ElissaConfiguration, handler: CompletionHandlerClosure) -> UIView? {
+    static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, handler: @escaping CompletionHandlerClosure) -> UIView? {
         staticElissa = Elissa(view: sourceView, configuration: configuration)
         staticElissa?.handler = handler
         return staticElissa
     }
     
-    private var handler: CompletionHandlerClosure!
+    fileprivate var handler: CompletionHandlerClosure!
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
  
-    @IBAction func actionButtonTapped(sender: UIButton) {
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
         handler()
     }
     
-    private let arrowSize: CGSize = CGSize(width: 20, height: 10)
-    private let popupHeight: CGFloat = 36.0
-    private let offsetToSourceView: CGFloat = 5.0
-    private var popupMinMarginScreenBounds: CGFloat = 5.0
+    fileprivate let arrowSize: CGSize = CGSize(width: 20, height: 10)
+    fileprivate let popupHeight: CGFloat = 36.0
+    fileprivate let offsetToSourceView: CGFloat = 5.0
+    fileprivate var popupMinMarginScreenBounds: CGFloat = 5.0
     
-    private init(view: UIView, configuration: ElissaConfiguration) {
+    fileprivate init(view: UIView, configuration: ElissaConfiguration) {
         super.init(frame: CGRect.zero)
         
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let views = bundle.loadNibNamed("Elissa", owner: self, options: nil)
         
-        guard let embeddedContentView = views.first as? UIView else { return }
+        guard let embeddedContentView = views?.first as? UIView else { return }
         addSubview(embeddedContentView)
         
         embeddedContentView.backgroundColor = configuration.backgroundColor
@@ -75,14 +75,14 @@ public class Elissa: UIView {
         embeddedContentView.layer.cornerRadius = 3.0
         
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
-        bringSubviewToFront(embeddedContentView)
+        bringSubview(toFront: embeddedContentView)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func calculatePositon(sourceView sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
+    fileprivate func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
         var updatedFrame = CGRect()
         updatedFrame.size.width = contentView.frame.size.width + 45 // TODO: get values from autolayout constraints
         updatedFrame.size.height = popupHeight
@@ -93,7 +93,7 @@ public class Elissa: UIView {
         contentView.layer.cornerRadius = 5
         
         let checkPoint = contentView.frame.origin.x + contentView.frame.size.width
-        let appWidth = UIScreen.mainScreen().applicationFrame.size.width
+        let appWidth = UIScreen.main.applicationFrame.size.width
         
         var offset: CGFloat = 0.0
         
@@ -110,23 +110,23 @@ public class Elissa: UIView {
         return contentView
     }
     
-    private func drawTriangleForTabBarItemIndicator(popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
+    fileprivate func drawTriangleForTabBarItemIndicator(_ popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath()
         let startPoint = (tabbarItem.center.x - arrowSize.width / 2) - popupView.frame.origin.x
         
-        path.moveToPoint(CGPoint(x: startPoint, y: popupView.frame.size.height))
-        path.addLineToPoint(CGPoint(x: startPoint + (arrowSize.width / 2), y: popupView.frame.size.height + arrowSize.height))
-        path.addLineToPoint(CGPoint(x: startPoint + arrowSize.width, y: popupView.frame.size.height))
+        path.move(to: CGPoint(x: startPoint, y: popupView.frame.size.height))
+        path.addLine(to: CGPoint(x: startPoint + (arrowSize.width / 2), y: popupView.frame.size.height + arrowSize.height))
+        path.addLine(to: CGPoint(x: startPoint + arrowSize.width, y: popupView.frame.size.height))
         
-        path.closePath()
+        path.close()
         
-        shapeLayer.path = path.CGPath
-        shapeLayer.fillColor = backgroundColor.CGColor
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = backgroundColor.cgColor
         popupView.layer.addSublayer(shapeLayer)
     }
     
-    private func applyOffset(offset: CGFloat, view: UIView) {
+    fileprivate func applyOffset(_ offset: CGFloat, view: UIView) {
         var frame = view.frame
         frame.origin.x -= (offset + popupMinMarginScreenBounds)
         view.frame = frame
