@@ -67,13 +67,14 @@ open class Elissa: UIView {
         messageLabel.text = configuration.message
         messageLabel.font = configuration.font
         messageLabel.textColor = configuration.textColor
+        layoutIfNeeded()
         
         iconImageView.image = configuration.image
         iconImageView.tintColor = configuration.textColor
         
         calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor ?? self.tintColor)
         embeddedContentView.layer.cornerRadius = 3.0
-        
+
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         bringSubview(toFront: embeddedContentView)
     }
@@ -84,7 +85,7 @@ open class Elissa: UIView {
     
     private func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
         var updatedFrame = CGRect()
-        updatedFrame.size.width = contentView.frame.size.width + 45 // TODO: get values from autolayout constraints
+        updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
         updatedFrame.size.height = popupHeight
         updatedFrame.origin.x = sourceView.center.x - updatedFrame.size.width / 2
         updatedFrame.origin.y = (sourceView.frame.origin.y - sourceView.frame.size.height) + offsetToSourceView
