@@ -83,7 +83,7 @@ open class Elissa: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
+    @discardableResult private func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
         var updatedFrame = CGRect()
         updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
         updatedFrame.size.height = popupHeight
