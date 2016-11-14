@@ -24,7 +24,7 @@ open class Elissa: UIView {
         return staticElissa != nil
     }
     
-    fileprivate static var staticElissa: Elissa?
+    private static var staticElissa: Elissa?
 
     open static func dismiss() {
         if staticElissa != nil {
@@ -39,7 +39,7 @@ open class Elissa: UIView {
         return staticElissa
     }
     
-    fileprivate var handler: CompletionHandlerClosure!
+    private var handler: CompletionHandlerClosure!
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -48,12 +48,12 @@ open class Elissa: UIView {
         handler()
     }
     
-    fileprivate let arrowSize: CGSize = CGSize(width: 20, height: 10)
-    fileprivate let popupHeight: CGFloat = 36.0
-    fileprivate let offsetToSourceView: CGFloat = 5.0
-    fileprivate var popupMinMarginScreenBounds: CGFloat = 5.0
+    private let arrowSize: CGSize = CGSize(width: 20, height: 10)
+    private let popupHeight: CGFloat = 36.0
+    private let offsetToSourceView: CGFloat = 5.0
+    private var popupMinMarginScreenBounds: CGFloat = 5.0
     
-    fileprivate init(view: UIView, configuration: ElissaConfiguration) {
+    private init(view: UIView, configuration: ElissaConfiguration) {
         super.init(frame: CGRect.zero)
         
         let bundle = Bundle(for: type(of: self))
@@ -82,7 +82,7 @@ open class Elissa: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
+    private func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
         var updatedFrame = CGRect()
         updatedFrame.size.width = contentView.frame.size.width + 45 // TODO: get values from autolayout constraints
         updatedFrame.size.height = popupHeight
@@ -110,7 +110,7 @@ open class Elissa: UIView {
         return contentView
     }
     
-    fileprivate func drawTriangleForTabBarItemIndicator(_ popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
+    private func drawTriangleForTabBarItemIndicator(_ popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath()
         let startPoint = (tabbarItem.center.x - arrowSize.width / 2) - popupView.frame.origin.x
@@ -126,7 +126,7 @@ open class Elissa: UIView {
         popupView.layer.addSublayer(shapeLayer)
     }
     
-    fileprivate func applyOffset(_ offset: CGFloat, view: UIView) {
+    private func applyOffset(_ offset: CGFloat, view: UIView) {
         var frame = view.frame
         frame.origin.x -= (offset + popupMinMarginScreenBounds)
         view.frame = frame
