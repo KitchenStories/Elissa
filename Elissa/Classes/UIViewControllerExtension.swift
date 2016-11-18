@@ -12,10 +12,10 @@ public typealias CompletionHandlerClosure = () -> ()?
 
 extension UIViewController {
     
-    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, configuration: ElissaConfiguration, onTouchHandler: @escaping CompletionHandlerClosure) {
+    public func showElissaFromTabbar(at index: Swift.Int, configuration: ElissaConfiguration, onTouchHandler: @escaping CompletionHandlerClosure) {
         guard
-            tabBarController != nil && tabbarItemIndex <= tabBarController?.tabBar.items?.count ?? 0,
-            let view = tabBarController?.tabBar.items?[tabbarItemIndex].value(forKey: "view") as? UIView
+            tabBarController != nil && index <= tabBarController?.tabBar.items?.count ?? 0,
+            let view = tabBarController?.tabBar.items?[index].value(forKey: "view") as? UIView
             else { return }
         
         if Elissa.isVisible {
