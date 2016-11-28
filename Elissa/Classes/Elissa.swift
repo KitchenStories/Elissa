@@ -31,12 +31,18 @@ open class Elissa: UIView {
             staticElissa!.removeFromSuperview()
             staticElissa = nil
         }
+        NotificationCenter.default.removeObserver(self)
     }
-    
+
     static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, handler: @escaping CompletionHandlerClosure) -> UIView? {
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         staticElissa = Elissa(view: sourceView, configuration: configuration)
         staticElissa?.handler = handler
         return staticElissa
+    }
+    
+    static func orientationChange() {
+        Elissa.dismiss()
     }
     
     private var handler: CompletionHandlerClosure!
