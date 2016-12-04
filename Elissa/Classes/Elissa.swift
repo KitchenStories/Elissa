@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct ElissaConfiguration {
+public class ElissaConfiguration : NSObject {
     public var message: String?
     public var image: UIImage?
     public var backgroundColor: UIColor?
     public var textColor: UIColor?
     public var font: UIFont?
     
-    public init() {}
+    public override init() {}
 }
 
 open class Elissa: UIView {
@@ -31,21 +31,27 @@ open class Elissa: UIView {
             staticElissa!.removeFromSuperview()
             staticElissa = nil
         }
+        NotificationCenter.default.removeObserver(self)
     }
-    
-    static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, handler: @escaping CompletionHandlerClosure) -> UIView? {
+
+    static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, handler: ((Void) -> (Void))?) -> UIView? {
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         staticElissa = Elissa(view: sourceView, configuration: configuration)
         staticElissa?.handler = handler
         return staticElissa
     }
     
-    private var handler: CompletionHandlerClosure!
+    static func orientationChange() {
+        Elissa.dismiss()
+    }
+    
+    private var handler: ((Void) -> (Void))?
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
  
     @IBAction func actionButtonTapped(_ sender: UIButton) {
-        handler()
+        handler?()
     }
     
     private let arrowSize: CGSize = CGSize(width: 20, height: 10)
@@ -54,6 +60,7 @@ open class Elissa: UIView {
     private var popupMinMarginScreenBounds: CGFloat = 5.0
     
     private init(view: UIView, configuration: ElissaConfiguration) {
+        
         super.init(frame: CGRect.zero)
         
         let bundle = Bundle(for: type(of: self))

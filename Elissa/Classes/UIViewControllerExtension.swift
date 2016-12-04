@@ -8,14 +8,12 @@
 
 import Foundation
 
-public typealias CompletionHandlerClosure = () -> ()?
-
 extension UIViewController {
     
-    public func showElissaFromTabbar(itemIndex tabbarItemIndex: Int, configuration: ElissaConfiguration, onTouchHandler: @escaping CompletionHandlerClosure) {
+    public func showElissaFromTabbar(at index: Swift.Int, configuration: ElissaConfiguration, onTouchHandler: (() -> ())?) {
         guard
-            tabBarController != nil && tabbarItemIndex <= tabBarController?.tabBar.items?.count ?? 0,
-            let view = tabBarController?.tabBar.items?[tabbarItemIndex].value(forKey: "view") as? UIView
+            tabBarController != nil && index <= tabBarController?.tabBar.items?.count ?? 0,
+            let view = tabBarController?.tabBar.items?[index].value(forKey: "view") as? UIView
             else { return }
         
         if Elissa.isVisible {
@@ -23,7 +21,7 @@ extension UIViewController {
         }
         
         let delayTime = DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+        DispatchQueue.main.asyncAfter(deadline: delayTime) { [unowned self] _ in
             guard let elissa = Elissa.showElissa(self.updatePresentingFrame(view), configuration: configuration, handler: onTouchHandler) else { return }
             
             self.tabBarController?.view.addSubview(elissa)
