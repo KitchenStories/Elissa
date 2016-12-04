@@ -8,11 +8,9 @@
 
 import Foundation
 
-public typealias CompletionHandlerClosure = () -> ()?
-
 extension UIViewController {
     
-    public func showElissaFromTabbar(at index: Swift.Int, configuration: ElissaConfiguration, onTouchHandler: @escaping CompletionHandlerClosure) {
+    public func showElissaFromTabbar(at index: Swift.Int, configuration: ElissaConfiguration, onTouchHandler: (() -> ())?) {
         guard
             tabBarController != nil && index <= tabBarController?.tabBar.items?.count ?? 0,
             let view = tabBarController?.tabBar.items?[index].value(forKey: "view") as? UIView
