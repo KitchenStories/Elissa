@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBAction func someActionTrigger(sender: UIButton) {
         
-        var elissaConfig = ElissaConfiguration()
+        let elissaConfig = ElissaConfiguration()
         elissaConfig.message = "Find your favorites here"
         elissaConfig.image = UIImage(named: "heartIcon")
         elissaConfig.font = UIFont.systemFont(ofSize: 17)
