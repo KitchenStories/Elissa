@@ -22,12 +22,27 @@ elissaConfig.textColor = UIColor(red: 91/255, green: 91/255, blue: 91/255, alpha
 elissaConfig.backgroundColor = UIColor(red: 241/255, green: 215/255, blue: 85/255, alpha: 1.0)
 ```
 
+```objective-c
+ElissaConfiguration *elissaConfig = [ElissaConfiguration new];
+elissaConfig.message = @"Find your favorites here";
+elissaConfig.image = [UIImage imageNamed:@"heartIcon"];
+elissaConfig.font = [UIFont systemFontOfSize:17];
+elissaConfig.textColor = [UIColor redColor];
+elissaConfig.backgroundColor = [UIColor greenColor];
+```
+
 Presenting Elissa is as simple as that:
 
 ```swift
-showElissaFromTabbar(itemIndex: 4, configuration: elissaConfig) { 
-	Elissa.dismiss()
+showElissaFromTabbar(at: 4, configuration: elissaConfig) {            
+    Elissa.dismiss()
 }
+```
+
+```objective-c
+[self showElissaFromTabbarAt:0 configuration:elissaConfig onTouchHandler:^{
+    [Elissa dismiss];
+}];
 ```
 
 Additionally (and optionally) you can pass a closure that is executed once the user taps the notification.
