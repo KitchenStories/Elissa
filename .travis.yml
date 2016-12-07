@@ -1,15 +1,29 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
 language: objective-c
-# cache: cocoapods
 podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
-osx_image: xcode8
-
+env:
+  global:
+  - FRAMEWORK_NAME=Elissa
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- carthage bootstrap
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+osx_image: xcode8.1
+xcode_workspace: Example/Elissa.xcworkspace
+xcode_scheme: Elissa
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Elissa.xcworkspace -scheme Elissa-Example -destination 'platform=iOS Simulator,name=iPhone 6s,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
-#- pod lib lint
+- set -o pipefail && xcodebuild test -workspace Example/Elissa.xcworkspace -scheme
+  Elissa-Example -destination 'platform=iOS Simulator,name=iPhone 6s,OS=10.0' ONLY_ACTIVE_ARCH=NO
+  | xcpretty
+deploy:
+  provider: releases
+  api_key:
+    secure: cxo/ExW4y+5iNp8OgvIYmIGe7uCNwQUBapZTaDfvGdR5e4HErN97u+kLw4JCcaElixLe8tEM538alJCYLdypbITi7hM2XbdH5zOkXs7sC/2ODEG0b5bl8d4AC2Bfv0L4hOK5qFHffaLo7pBkiigXnqjtGzLjI/w0NEmgOzIWOe1BXDavnBQadfrdY6+8iMP/UqfuQrGnbS8NlNBbXoDdVTrEn5CBmrlFvT3m24nefHQk7TPTx+SuFqBBiAmqQMWBk54Nne+RnaeOSouHe6k8fnevRu/nbuzyPmAKUHPzV3Wlfdc8IhIbc4MGhTkew4Svj943WB98sgdOcXzpv72shiRPvzOLHn9DQhYd8oeYH0Ygt8tmoZZZb04bKFY5n0pmrckdt5NKKJk6/UltgJ3V+aEp13TgUfvmFmFb/6tHR5lzSKiG7FmVWO/6Pbiql4k0wCcwrz1gsEjmoHl6uOiQLFLVxOE7FESi9cFx79AxLT3VUIm15iolbw+6Dy6+Yt6P7u00OPCzhdWzWpqtQNUubWVU8zx3H+TmcMteeWeWMSdjVv+/6HYvb8qpGeMuY8IyKxS+8tX8BdMzsVGKOmV9uDqNR+myu4mr6L7LJ2C1DqNsb8oZhpcxhgXGiNOixQ/OH/t8GUV/ChLqtT7UZKzzZ+UFtp0HOHjbBHJLnwoTWuQ=
+  file: $FRAMEWORK_NAME.framework.zip
+  skip_cleanup: true
+  on:
+    repo: KitchenStories/Elissa
+    tags: true
