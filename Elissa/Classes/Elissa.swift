@@ -8,58 +8,38 @@
 
 import Foundation
 
-public class ElissaConfiguration : NSObject {
+public class ElissaConfiguration: NSObject {
     public var message: String?
     public var image: UIImage?
     public var backgroundColor: UIColor?
     public var textColor: UIColor?
     public var font: UIFont?
+    public var arrowOffset: CGFloat = 2
     
     public override init() {}
 }
 
 open class Elissa: UIView {
 
-    open static var isVisible: Bool {
-        return staticElissa != nil
-    }
-    
-    private static var staticElissa: Elissa?
-
-    open static func dismiss() {
-        if staticElissa != nil {
-            staticElissa!.removeFromSuperview()
-            staticElissa = nil
-        }
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, handler: ((Void) -> (Void))?) -> UIView? {
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        staticElissa = Elissa(view: sourceView, configuration: configuration)
-        staticElissa?.handler = handler
-        return staticElissa
-    }
-    
-    static func orientationChange() {
-        Elissa.dismiss()
-    }
-    
-    private var handler: ((Void) -> (Void))?
-    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
- 
-    @IBAction func actionButtonTapped(_ sender: UIButton) {
-        handler?()
-    }
-    
+
     private let arrowSize: CGSize = CGSize(width: 20, height: 10)
     private let popupHeight: CGFloat = 36.0
     private let offsetToSourceView: CGFloat = 5.0
     private var popupMinMarginScreenBounds: CGFloat = 5.0
     
-    private init(view: UIView, configuration: ElissaConfiguration) {
+    private let configuration: ElissaConfiguration
+    private static var staticElissa: Elissa?
+    private var completionHandler: (() -> Void)?
+    
+    open static var isVisible: Bool {
+        return staticElissa != nil
+    }
+    
+    internal init(sourceView: UIView, configuration: ElissaConfiguration, completionHandler: (() -> Void)?) {
+        self.configuration = configuration
+        self.completionHandler = completionHandler
         
         super.init(frame: CGRect.zero)
         
@@ -76,10 +56,14 @@ open class Elissa: UIView {
         messageLabel.textColor = configuration.textColor
         layoutIfNeeded()
         
-        iconImageView.image = configuration.image
-        iconImageView.tintColor = configuration.textColor
+        if let image = configuration.image {
+            iconImageView.image = image
+            iconImageView.tintColor = configuration.textColor
+        } else {
+            iconImageView.removeFromSuperview()
+        }
         
-        calculatePositon(sourceView: view, contentView: self, backgroundColor: configuration.backgroundColor ?? self.tintColor)
+        calculatePositon(sourceView: sourceView, contentView: self)
         embeddedContentView.layer.cornerRadius = 3.0
 
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
@@ -90,12 +74,35 @@ open class Elissa: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @discardableResult private func calculatePositon(sourceView: UIView, contentView: UIView, backgroundColor: UIColor) -> UIView {
+    open static func dismiss() {
+        if let staticElissa = staticElissa {
+            staticElissa.removeFromSuperview()
+            self.staticElissa = nil
+        }
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    static func showElissa(_ sourceView: UIView, configuration: ElissaConfiguration, completionHandler: (() -> Void)?) -> Elissa {
+        NotificationCenter.default.addObserver(self, selector: #selector(dismiss), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        let staticElissa = Elissa(sourceView: sourceView, configuration: configuration, completionHandler: completionHandler)
+        self.staticElissa = staticElissa
+        return staticElissa
+    }
+    
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
+        completionHandler?()
+    }
+    
+    private func calculatePositon(sourceView: UIView, contentView: UIView) {
         var updatedFrame = CGRect()
-        updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
+        if configuration.image != nil {
+            updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
+        } else {
+            updatedFrame.size.width = messageLabel.frame.size.width + 16
+        }
         updatedFrame.size.height = popupHeight
         updatedFrame.origin.x = sourceView.center.x - updatedFrame.size.width / 2
-        updatedFrame.origin.y = (sourceView.frame.origin.y - sourceView.frame.size.height) + offsetToSourceView
+        updatedFrame.origin.y = (sourceView.frame.origin.y - popupHeight) - arrowSize.height + configuration.arrowOffset
         
         contentView.frame = updatedFrame
         contentView.layer.cornerRadius = 5
@@ -113,25 +120,23 @@ open class Elissa: UIView {
         }
         applyOffset(offset, view: contentView)
         
-        drawTriangleForTabBarItemIndicator(contentView, tabbarItem: sourceView, backgroundColor: backgroundColor)
-        
-        return contentView
+        drawTriangleForTabBarItemIndicator(contentView, sourceView: sourceView)
     }
     
-    private func drawTriangleForTabBarItemIndicator(_ popupView: UIView, tabbarItem: UIView, backgroundColor: UIColor) {
+    private func drawTriangleForTabBarItemIndicator(_ contentView: UIView, sourceView: UIView) {
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath()
-        let startPoint = (tabbarItem.center.x - arrowSize.width / 2) - popupView.frame.origin.x
+        let startPoint = (sourceView.center.x - arrowSize.width / 2) - contentView.frame.origin.x
         
-        path.move(to: CGPoint(x: startPoint, y: popupView.frame.size.height))
-        path.addLine(to: CGPoint(x: startPoint + (arrowSize.width / 2), y: popupView.frame.size.height + arrowSize.height))
-        path.addLine(to: CGPoint(x: startPoint + arrowSize.width, y: popupView.frame.size.height))
+        path.move(to: CGPoint(x: startPoint, y: contentView.frame.size.height))
+        path.addLine(to: CGPoint(x: startPoint + (arrowSize.width / 2), y: contentView.frame.size.height + arrowSize.height))
+        path.addLine(to: CGPoint(x: startPoint + arrowSize.width, y: contentView.frame.size.height))
         
         path.close()
         
         shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = backgroundColor.cgColor
-        popupView.layer.addSublayer(shapeLayer)
+        shapeLayer.fillColor = (configuration.backgroundColor ?? self.tintColor).cgColor
+        contentView.layer.addSublayer(shapeLayer)
     }
     
     private func applyOffset(_ offset: CGFloat, view: UIView) {
@@ -140,4 +145,3 @@ open class Elissa: UIView {
         view.frame = frame
     }
 }
-
