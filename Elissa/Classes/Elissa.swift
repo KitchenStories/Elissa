@@ -32,6 +32,7 @@ open class Elissa: UIView {
     private let configuration: ElissaConfiguration
     private static var staticElissa: Elissa?
     private var completionHandler: (() -> Void)?
+    private weak var sourceView: UIView?
     
     open static var isVisible: Bool {
         return staticElissa != nil
@@ -40,6 +41,7 @@ open class Elissa: UIView {
     internal init(sourceView: UIView, configuration: ElissaConfiguration, completionHandler: (() -> Void)?) {
         self.configuration = configuration
         self.completionHandler = completionHandler
+        self.sourceView = sourceView
         
         super.init(frame: CGRect.zero)
         
@@ -63,11 +65,16 @@ open class Elissa: UIView {
             iconImageView.removeFromSuperview()
         }
         
-        calculatePositon(sourceView: sourceView, contentView: self)
+        calculatePositon()
         embeddedContentView.layer.cornerRadius = 3.0
 
         embeddedContentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         bringSubview(toFront: embeddedContentView)
+    }
+    
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        calculatePositon()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -93,7 +100,8 @@ open class Elissa: UIView {
         completionHandler?()
     }
     
-    private func calculatePositon(sourceView: UIView, contentView: UIView) {
+    private func calculatePositon() {
+        guard let sourceView = sourceView else { return }
         var updatedFrame = CGRect()
         if configuration.image != nil {
             updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
@@ -104,23 +112,24 @@ open class Elissa: UIView {
         updatedFrame.origin.x = sourceView.center.x - updatedFrame.size.width / 2
         updatedFrame.origin.y = (sourceView.frame.origin.y - popupHeight) - arrowSize.height + configuration.arrowOffset
         
-        contentView.frame = updatedFrame
-        contentView.layer.cornerRadius = 5
+        self.frame = updatedFrame
+        self.layer.cornerRadius = 5
         
-        let checkPoint = contentView.frame.origin.x + contentView.frame.size.width
-        let appWidth = UIScreen.main.applicationFrame.size.width
+        let checkPoint = frame.maxX
+        
+        let appWidth = superview?.frame.width ?? UIScreen.main.applicationFrame.size.width
         
         var offset: CGFloat = 0.0
         
         if checkPoint > appWidth {
             offset = checkPoint - appWidth
-        } else if contentView.frame.origin.x < 5 {
+        } else if frame.origin.x < 5 {
             popupMinMarginScreenBounds *= -1
-            offset = contentView.frame.origin.x
+            offset = frame.origin.x
         }
-        applyOffset(offset, view: contentView)
+        applyOffset(offset, view: self)
         
-        drawTriangleForTabBarItemIndicator(contentView, sourceView: sourceView)
+        drawTriangleForTabBarItemIndicator(self, sourceView: sourceView)
     }
     
     private func drawTriangleForTabBarItemIndicator(_ contentView: UIView, sourceView: UIView) {
