@@ -103,17 +103,19 @@ open class Elissa: UIView {
     private func calculatePositon() {
         guard let sourceView = sourceView else { return }
         var updatedFrame = CGRect()
+        
+        let margin: CGFloat = 8
         if configuration.image != nil {
-            updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + 24
+            updatedFrame.size.width = iconImageView.frame.size.width + messageLabel.frame.size.width + margin * 3
         } else {
-            updatedFrame.size.width = messageLabel.frame.size.width + 16
+            updatedFrame.size.width = messageLabel.frame.size.width + margin * 2
         }
         updatedFrame.size.height = popupHeight
         updatedFrame.origin.x = sourceView.center.x - updatedFrame.size.width / 2
         updatedFrame.origin.y = (sourceView.frame.origin.y - popupHeight) - arrowSize.height + configuration.arrowOffset
         
-        self.frame = updatedFrame
-        self.layer.cornerRadius = 5
+        frame = updatedFrame
+        layer.cornerRadius = 5
         
         let checkPoint = frame.maxX
         
