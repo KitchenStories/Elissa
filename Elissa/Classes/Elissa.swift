@@ -6,7 +6,7 @@
 //  Copyright © 2016 Kitchen Stories. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class ElissaConfiguration: NSObject {
     public var message: String?
