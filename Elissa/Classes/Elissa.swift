@@ -33,6 +33,7 @@ open class Elissa: UIView {
     private static var staticElissa: Elissa?
     private var completionHandler: (() -> Void)?
     private weak var sourceView: UIView?
+    private weak var triangleLayer: CAShapeLayer?
     
     open static var isVisible: Bool {
         return staticElissa != nil
@@ -135,6 +136,8 @@ open class Elissa: UIView {
     }
     
     private func drawTriangleForTabBarItemIndicator(_ contentView: UIView, sourceView: UIView) {
+        triangleLayer?.removeFromSuperlayer()
+        
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath()
         let startPoint = (sourceView.center.x - arrowSize.width / 2) - contentView.frame.origin.x
@@ -148,6 +151,8 @@ open class Elissa: UIView {
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = (configuration.backgroundColor ?? self.tintColor).cgColor
         contentView.layer.addSublayer(shapeLayer)
+        
+        triangleLayer = shapeLayer
     }
     
     private func applyOffset(_ offset: CGFloat, view: UIView) {
