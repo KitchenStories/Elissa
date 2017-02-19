@@ -6,7 +6,7 @@
 //  Copyright © 2017 AJNS New Media GMBH. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Elissa.
 FOUNDATION_EXPORT double ElissaVersionNumber;
