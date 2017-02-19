@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0A3F3431E38BC9400D9BB20"
+               BlueprintIdentifier = "BE83D5FE47D45402DF9E625699856043"
                BuildableName = "Elissa.framework"
                BlueprintName = "Elissa"
-               ReferencedContainer = "container:Elissa.xcodeproj">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0A3F32E1E38BB6E00D9BB20"
-               BuildableName = "ElissaTests.xctest"
-               BlueprintName = "ElissaTests"
-               ReferencedContainer = "container:Elissa.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A3F3431E38BC9400D9BB20"
-            BuildableName = "Elissa.framework"
-            BlueprintName = "Elissa"
-            ReferencedContainer = "container:Elissa.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A3F3431E38BC9400D9BB20"
+            BlueprintIdentifier = "BE83D5FE47D45402DF9E625699856043"
             BuildableName = "Elissa.framework"
             BlueprintName = "Elissa"
-            ReferencedContainer = "container:Elissa.xcodeproj">
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A3F3431E38BC9400D9BB20"
+            BlueprintIdentifier = "BE83D5FE47D45402DF9E625699856043"
             BuildableName = "Elissa.framework"
             BlueprintName = "Elissa"
-            ReferencedContainer = "container:Elissa.xcodeproj">
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
