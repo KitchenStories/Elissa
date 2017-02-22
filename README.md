@@ -7,9 +7,15 @@
 
 ![](https://github.com/KitchenStories/Elissa/blob/master/images/Elissa_logo.png)
 
-Display a notification on top of a UITabBarItem to reveal additional user guidance.
+Attach a local notification to any UIView to reveal additional user guidance.
 
-## Usage
+# Usage
+
+## Instance vs. Singleton
+
+tbd
+
+## Configuration
 
 You can display Elissa according to your app’s theming by creating and passing a fully customisable configuration.
 
@@ -31,7 +37,9 @@ elissaConfig.textColor = [UIColor redColor];
 elissaConfig.backgroundColor = [UIColor greenColor];
 ```
 
-Presenting Elissa is as simple as that:
+## Presentation
+
+As of now there are **two different API** calls for rendering Elissa depending on the specific use case that is preferred. When presenting Elissa on top of a UITabBarItem you present from an instance of UIViewController:
 
 ```swift
 showElissaFromTabbar(at: 4, configuration: elissaConfig) {            
@@ -44,8 +52,23 @@ showElissaFromTabbar(at: 4, configuration: elissaConfig) {
     [Elissa dismiss];
 }];
 ```
+In this case Elissa is created and internally managed as a Singleton instance.
 
-Additionally (and optionally) you can pass a closure that is executed once the user taps the notification.
+When attaching Elissa to any UIView you call the API from the attaching view itself:
+
+```swift
+myCustomView.showELissa(fromSourceView: sourceView, configuration: elissaConfig) {
+  // optionally do something
+}
+```
+
+```objective-c
+[myCustomView showELissaFromSourceView:sourceView configuration: elissaConfig onTouchHandler:^{
+  // optionally do something
+}];
+```
+
+Please not that the latter API call creates and returns an instance of Elissa.
 
 ## Example
 
@@ -63,11 +86,28 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+### CocoaPods
+
 Elissa is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "Elissa"
+```
+
+### Carthage
+
+To use Carthage, first make sure you have installed it and updated it to the latest version by following their instructions on [their repo](https://github.com/Carthage/Carthage).
+
+First, you add `Elissa` to your `Cartfile`:
+
+```
+github "KitchenStories/Elissa"
+```
+Then, run Carthage:
+
+```
+carthage update
 ```
 
 ## Author
