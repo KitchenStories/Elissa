@@ -11,10 +11,6 @@ Attach a local notification to any UIView to reveal additional user guidance.
 
 # Usage
 
-## Instance vs. Singleton
-
-tbd
-
 ## Configuration
 
 You can display Elissa according to your app’s theming by creating and passing a fully customisable configuration.
@@ -112,7 +108,7 @@ carthage update
 
 ## Author
 
-Kersten Broich, kersten.broich@kitchenstories.de
+Kersten Broich, kersten.broich@gmail.com
 
 ## License
 
