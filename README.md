@@ -64,7 +64,7 @@ myCustomView.showELissa(fromSourceView: sourceView, configuration: elissaConfig)
 }];
 ```
 
-Please not that the latter API call creates and returns an instance of Elissa.
+Please not that the latter API call creates and returns ***an instance*** of Elissa.
 
 ## Example
 
