@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3RT-Xf-SgI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3RT-Xf-SgI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -95,20 +98,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-2Y-b24">
+                                <rect key="frame" x="127.5" y="268.5" width="120" height="30"/>
                                 <state key="normal" title="Significant Action"/>
                                 <connections>
                                     <action selector="someActionTriggerWithSender:" destination="M6a-ts-6LK" eventType="touchUpInside" id="blz-99-ZkZ"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-7F-AQV">
+                                <rect key="frame" x="311" y="48" width="51" height="31"/>
+                                <connections>
+                                    <action selector="didChangeSwitch:" destination="M6a-ts-6LK" eventType="valueChanged" id="8uX-Qr-sIU"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-Ix-iKD">
+                                <rect key="frame" x="15" y="53" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RGr-2Y-b24" firstAttribute="centerY" secondItem="ZxW-ct-oCg" secondAttribute="centerY" constant="-50" id="3F0-4d-QwF"/>
+                            <constraint firstItem="n0L-7F-AQV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u6P-Ix-iKD" secondAttribute="trailing" constant="15" id="FW3-wF-NTr"/>
+                            <constraint firstItem="u6P-Ix-iKD" firstAttribute="centerY" secondItem="n0L-7F-AQV" secondAttribute="centerY" id="MO4-qZ-xSI"/>
                             <constraint firstItem="RGr-2Y-b24" firstAttribute="centerX" secondItem="ZxW-ct-oCg" secondAttribute="centerX" id="R3z-u5-Mym"/>
+                            <constraint firstItem="u6P-Ix-iKD" firstAttribute="leading" secondItem="ZxW-ct-oCg" secondAttribute="leading" constant="15" id="Z0d-tv-DBB"/>
+                            <constraint firstAttribute="trailing" secondItem="n0L-7F-AQV" secondAttribute="trailing" constant="15" id="pah-tG-Cka"/>
+                            <constraint firstItem="u6P-Ix-iKD" firstAttribute="top" secondItem="HmZ-DC-Bqt" secondAttribute="bottom" constant="33" id="ySy-RW-Rop"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" image="folder-item" id="xxJ-Yt-Icf"/>
                     <connections>
+                        <outlet property="configLabel" destination="u6P-Ix-iKD" id="0Ej-6i-TlH"/>
+                        <outlet property="elissaSwitch" destination="n0L-7F-AQV" id="Ksm-rW-xSi"/>
                         <outlet property="someActionButton" destination="RGr-2Y-b24" id="jwJ-oT-KVx"/>
                     </connections>
                 </viewController>
