@@ -12,6 +12,20 @@ Attach a local notification to any UIView to reveal additional user guidance.
 
 # Usage
 
+## Example
+
+![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo.gif)
+
+Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
+
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_0.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_1.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_2.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_3.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_4.png)
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 ## Configuration
 
 You can display Elissa according to your app’s theming by creating and passing a fully customisable configuration.
@@ -67,19 +81,6 @@ myViewController.view.showELissa(fromSourceView: sourceView, configuration: elis
 
 Please not that the latter API call creates and returns ***an instance*** of Elissa.
 
-## Example
-
-![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo.gif)
-
-Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
-
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_0.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_1.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_2.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_3.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_4.png)
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
