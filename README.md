@@ -2,6 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/KitchenStories/Elissa.svg?style=flat)](https://travis-ci.org/KitchenStories/Elissa)
 [![Version](https://img.shields.io/cocoapods/v/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 [![Platform](https://img.shields.io/cocoapods/p/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 
@@ -50,16 +51,16 @@ showElissaFromTabbar(at: 4, configuration: elissaConfig) {
 ```
 In this case Elissa is created and internally managed as a Singleton instance.
 
-When attaching Elissa to any UIView you call the API from the attaching view itself:
+When attaching Elissa to any UIView you call the API from a containing view which owns an anchor view for Elissa (typically a parent => child relation):
 
 ```swift
-myCustomView.showELissa(fromSourceView: sourceView, configuration: elissaConfig) {
+myViewController.view.showELissa(fromSourceView: sourceView, configuration: elissaConfig) {
   // optionally do something
 }
 ```
 
 ```objective-c
-[myCustomView showELissaFromSourceView:sourceView configuration: elissaConfig onTouchHandler:^{
+[myViewController.view showELissaFromSourceView:sourceView configuration: elissaConfig onTouchHandler:^{
   // optionally do something
 }];
 ```
