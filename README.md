@@ -2,14 +2,31 @@
 
 [![CI Status](http://img.shields.io/travis/KitchenStories/Elissa.svg?style=flat)](https://travis-ci.org/KitchenStories/Elissa)
 [![Version](https://img.shields.io/cocoapods/v/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 [![Platform](https://img.shields.io/cocoapods/p/Elissa.svg?style=flat)](http://cocoapods.org/pods/Elissa)
 
 ![](https://github.com/KitchenStories/Elissa/blob/master/images/Elissa_logo.png)
 
-Display a notification on top of a UITabBarItem to reveal additional user guidance.
+Attach a local notification to any UIView to reveal additional user guidance.
 
-## Usage
+# Usage
+
+## Example
+
+![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo2.gif)
+
+Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
+
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_0.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_1.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_2.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_3.png)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_4.png)
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Configuration
 
 You can display Elissa according to your app’s theming by creating and passing a fully customisable configuration.
 
@@ -31,7 +48,9 @@ elissaConfig.textColor = [UIColor redColor];
 elissaConfig.backgroundColor = [UIColor greenColor];
 ```
 
-Presenting Elissa is as simple as that:
+## Presentation
+
+As of now there are **two different API** calls for rendering Elissa depending on the specific use case that is preferred. When presenting Elissa on top of a UITabBarItem you present from an instance of UIViewController:
 
 ```swift
 showElissaFromTabbar(at: 4, configuration: elissaConfig) {            
@@ -44,24 +63,28 @@ showElissaFromTabbar(at: 4, configuration: elissaConfig) {
     [Elissa dismiss];
 }];
 ```
+In this case Elissa is created and internally managed as a Singleton instance.
 
-Additionally (and optionally) you can pass a closure that is executed once the user taps the notification.
+When attaching Elissa to any UIView you call the API from a containing view which owns an anchor view for Elissa (typically a parent => child relation):
 
-## Example
+```swift
+myViewController.view.showELissa(fromSourceView: sourceView, configuration: elissaConfig) {
+  // optionally do something
+}
+```
 
-![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo.gif)
+```objective-c
+[myViewController.view showELissaFromSourceView:sourceView configuration: elissaConfig onTouchHandler:^{
+  // optionally do something
+}];
+```
 
-Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
+Please not that the latter API call creates and returns ***an instance*** of Elissa.
 
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_0.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_1.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_2.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_3.png)
-![](https://github.com/KitchenStories/Elissa/blob/master/images/tabbar_item_4.png)
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
+
+### CocoaPods
 
 Elissa is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -70,9 +93,24 @@ it, simply add the following line to your Podfile:
 pod "Elissa"
 ```
 
+### Carthage
+
+To use Carthage, first make sure you have installed it and updated it to the latest version by following their instructions on [their repo](https://github.com/Carthage/Carthage).
+
+First, you add `Elissa` to your `Cartfile`:
+
+```
+github "KitchenStories/Elissa"
+```
+Then, run Carthage:
+
+```
+carthage update
+```
+
 ## Author
 
-Kersten Broich, kersten.broich@kitchenstories.de
+Kersten Broich, kersten.broich@gmail.com
 
 ## License
 
