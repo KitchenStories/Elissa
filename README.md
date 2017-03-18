@@ -14,7 +14,7 @@ Attach a local notification to any UIView to reveal additional user guidance.
 
 ## Example
 
-![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo2.gif =320x)
+![](https://github.com/KitchenStories/Elissa/blob/master/images/elissa_demo2.gif =320x568)
 
 Per default, Elissa will try to align to the center of the UITabBarItem. However she will never move out of sight to her parent’s view screen bounds. Therefor she applies an offset calculation that will also move the little arrow pointer accordingly.
 
