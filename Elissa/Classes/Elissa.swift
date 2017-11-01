@@ -125,10 +125,9 @@ open class Elissa: UIView {
         var offset: CGFloat = 0.0
         
         if checkPoint > appWidth {
-            offset = checkPoint - appWidth
+            offset = checkPoint - appWidth + popupMinMarginScreenBounds
         } else if frame.origin.x < 5 {
-            popupMinMarginScreenBounds *= -1
-            offset = frame.origin.x
+            offset = frame.origin.x - popupMinMarginScreenBounds
         }
         applyOffset(offset, view: self)
         
@@ -157,7 +156,7 @@ open class Elissa: UIView {
     
     private func applyOffset(_ offset: CGFloat, view: UIView) {
         var frame = view.frame
-        frame.origin.x -= (offset + popupMinMarginScreenBounds)
+        frame.origin.x -= offset
         view.frame = frame
     }
 }
